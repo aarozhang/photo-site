@@ -1,24 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Photo Site
+
+A Next.js-based photo gallery for organizing and displaying photo albums with markdown-driven content.
 
 ## Getting Started
 
-First, run the development server:
-
+1. **Install dependencies:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Start the development server:**
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Open [http://localhost:3000](http://localhost:3000) to view your site**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Creating Albums
+
+### Quick Album Creation
+Use the built-in script to create a new album:
+
+```bash
+node scripts/create-album.js "album name" "Album Title" "Location" "Description"
+```
+
+**Example:**
+```bash
+node scripts/create-album.js "summer vacation" "Summer Vacation 2024" "California" "Our amazing summer trip"
+```
+
+This creates:
+- `albums/summer-vacation.md` - Album markdown file
+- `public/images/summer-vacation/` - Directory for your photos
+
+### Adding Photos
+
+1. **Copy your photos** to the created images directory:
+```bash
+cp /path/to/your/photos/* public/images/summer-vacation/
+```
+
+2. **Automatically update the album** with all photos:
+```bash
+node scripts/update-album-images.js summer-vacation
+```
+
+3. **Your album is live!** The script automatically:
+   - Finds all images in the directory
+   - Updates the album markdown file
+   - Sets the first image as the cover photo
 
 ## Learn More
 
