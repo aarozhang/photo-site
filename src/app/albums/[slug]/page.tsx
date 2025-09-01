@@ -62,18 +62,6 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
           <PhotoGallery images={album.images} albumTitle={album.title} />
         </div>
       </section>
-
-      {/* Album Story */}
-      {album.content && (
-        <section className="bg-white py-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div 
-              className="prose prose-lg max-w-none"
-              dangerouslySetInnerHTML={{ __html: album.content }}
-            />
-          </div>
-        </section>
-      )}
     </main>
   );
 }

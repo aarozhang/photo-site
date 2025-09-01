@@ -18,10 +18,6 @@ images:
   - "/images/${slug}/cover.jpg"
 ---
 
-# ${title}
-
-${description}
-
 Add your album story here...
 `;
 

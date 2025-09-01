@@ -53,8 +53,4 @@ images:
   - "/images/north-cascades/Mohai and North Cascades-98.jpg"
 ---
 
-# North Cascades Nation Park
-
-Day trip to the North Cascades National Park. Started with a ~7 mile hike out-and-back to Cascade Pass, finishing with a drive to Diablo Lake.
-
 Add your album story here...
