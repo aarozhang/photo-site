@@ -41,8 +41,8 @@ Add your album story here...
   console.log(`📁 Images directory: public/images/${slug}/`);
   console.log(`📝 Next steps:`);
   console.log(`   1. Add your photos to public/images/${slug}/`);
-  console.log(`   2. Update the images array in albums/${slug}.md`);
-  console.log(`   3. Set your cover image`);
+  console.log(`   2. Run: node scripts/update-album-images.js ${slug}`);
+  console.log(`   3. Or manually copy: cp "path/to/photos/"* "public/images/${slug}/"`);
 }
 
 // Command line usage

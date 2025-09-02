@@ -66,6 +66,7 @@ Album story and details...
 - **PostCSS**: CSS processing
 - **Responsive Design**: Mobile-first approach
 - **Color Scheme**: Gray-based with blue accents
+- **Photo Layout**: CSS Columns masonry layout for natural photo flow
 
 ## Image Optimization
 - **Next.js Image**: Automatic optimization, lazy loading, responsive images

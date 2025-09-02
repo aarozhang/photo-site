@@ -57,10 +57,8 @@ export default async function AlbumPage({ params }: AlbumPageProps) {
       </header>
 
       {/* Photo Gallery */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <PhotoGallery images={album.images} albumTitle={album.title} />
-        </div>
+      <section>
+        <PhotoGallery images={album.images} albumTitle={album.title} />
       </section>
     </main>
   );

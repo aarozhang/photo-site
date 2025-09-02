@@ -28,7 +28,7 @@ node scripts/create-album.js "summer vacation" "Summer Vacation 2024" "Californi
 **Adding Photos to Existing Album:**
 ```bash
 # Copy your photos to the album directory
-cp /path/to/your/photos/* public/images/album-name/
+cp "/path/to/your/photos/"* "public/images/album-name/"
 
 # Automatically update the album with all photos
 node scripts/update-album-images.js album-name
