@@ -51,6 +51,37 @@ node scripts/update-album-images.js summer-vacation
    - Updates the album markdown file
    - Sets the first image as the cover photo
 
+## Image Preparation
+
+### Lightroom Export Settings (Recommended)
+For optimal web performance and quality:
+
+- **Format**: JPEG
+- **Quality**: 85-90%
+- **Color Space**: sRGB
+- **Image Sizing**: 2000px long edge
+- **Output Sharpening**: Screen, Standard
+
+### Why Lightroom Export?
+- Superior image quality control vs post-processing
+- Consistent color management
+- Optimal file sizes for web (vs 30-32MB originals)
+- Professional workflow integration
+
+## Amazon Q Context Usage
+
+This project includes comprehensive context documentation in the `/context` directory to help Amazon Q provide better assistance:
+
+```bash
+# The context directory contains:
+context/README.md           # Project overview
+context/technical-details.md # Architecture info  
+context/development-guide.md # Workflows and commands
+context/project-status.md    # Current status and roadmap
+```
+
+When working with Amazon Q, reference these files for accurate project understanding and recommendations.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
