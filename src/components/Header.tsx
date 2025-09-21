@@ -5,9 +5,10 @@ import { useState } from 'react';
 
 interface HeaderProps {
   currentPage?: string;
+  currentAlbum?: string;
 }
 
-export function Header({ currentPage }: HeaderProps) {
+export function Header({ currentPage, currentAlbum }: HeaderProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   // Mock album data - you can replace with actual album fetching
@@ -20,6 +21,10 @@ export function Header({ currentPage }: HeaderProps) {
     { slug: 'street-photography', title: 'Street Photography' },
     { slug: 'portraits', title: 'Portraits' }
   ];
+
+  // Determine if current album is in places or projects
+  const isPlacesActive = currentAlbum && placeAlbums.some(album => album.slug === currentAlbum);
+  const isProjectsActive = currentAlbum && projectAlbums.some(album => album.slug === currentAlbum);
 
   return (
     <header className="bg-white shadow-sm">
@@ -46,7 +51,11 @@ export function Header({ currentPage }: HeaderProps) {
               onMouseEnter={() => setActiveDropdown('places')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="text-lg font-light text-gray-700 hover:text-gray-900 transition-colors pb-2">
+              <button className={`text-lg font-light transition-colors pb-2 ${
+                isPlacesActive 
+                  ? 'text-gray-900 border-b-2 border-gray-900' 
+                  : 'text-gray-700 hover:text-gray-900'
+              }`}>
                 Places
               </button>
               {activeDropdown === 'places' && (
@@ -55,7 +64,11 @@ export function Header({ currentPage }: HeaderProps) {
                     <Link
                       key={album.slug}
                       href={`/albums/${album.slug}`}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-right"
+                      className={`block px-4 py-2 text-sm hover:bg-gray-100 text-right ${
+                        currentAlbum === album.slug
+                          ? 'text-gray-900 font-medium bg-gray-50'
+                          : 'text-gray-700 hover:text-gray-900'
+                      }`}
                     >
                       {album.title}
                     </Link>
@@ -70,7 +83,11 @@ export function Header({ currentPage }: HeaderProps) {
               onMouseEnter={() => setActiveDropdown('projects')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="text-lg font-light text-gray-700 hover:text-gray-900 transition-colors pb-2">
+              <button className={`text-lg font-light transition-colors pb-2 ${
+                isProjectsActive 
+                  ? 'text-gray-900 border-b-2 border-gray-900' 
+                  : 'text-gray-700 hover:text-gray-900'
+              }`}>
                 Projects
               </button>
               {activeDropdown === 'projects' && (
@@ -79,7 +96,11 @@ export function Header({ currentPage }: HeaderProps) {
                     <Link
                       key={album.slug}
                       href={`/albums/${album.slug}`}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 text-right"
+                      className={`block px-4 py-2 text-sm hover:bg-gray-100 text-right ${
+                        currentAlbum === album.slug
+                          ? 'text-gray-900 font-medium bg-gray-50'
+                          : 'text-gray-700 hover:text-gray-900'
+                      }`}
                     >
                       {album.title}
                     </Link>
