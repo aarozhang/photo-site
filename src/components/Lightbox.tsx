@@ -45,11 +45,11 @@ export function Lightbox({
   }, [onClose, onNext, onPrev]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{backgroundColor: 'rgba(255, 255, 255, 0.8)'}}>
       {/* Close button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 text-white hover:text-gray-300 z-10"
+        className="absolute top-4 right-4 text-gray-800 hover:text-gray-600 z-10 cursor-pointer"
         aria-label="Close lightbox"
       >
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ export function Lightbox({
       {images.length > 1 && (
         <button
           onClick={onPrev}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-800 hover:text-gray-600 z-10 cursor-pointer"
           aria-label="Previous image"
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@ export function Lightbox({
       {images.length > 1 && (
         <button
           onClick={onNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-800 hover:text-gray-600 z-10 cursor-pointer"
           aria-label="Next image"
         >
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,21 +84,21 @@ export function Lightbox({
       )}
 
       {/* Image */}
-      <div className="max-w-7xl max-h-full mx-4 flex items-center justify-center">
-        <div className="relative max-w-4xl max-h-[80vh]">
+      <div className="max-w-full max-h-full mx-2 flex items-center justify-center">
+        <div className="relative max-w-full max-h-[95vh]">
           <Image
             src={images[currentIndex]}
             alt={`${albumTitle} - Photo ${currentIndex + 1}`}
             width={1200}
             height={800}
-            className="max-w-full max-h-[80vh] object-contain rounded-lg"
+            className="max-w-full max-h-[95vh] object-contain"
             priority
           />
         </div>
       </div>
 
       {/* Image counter */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-gray-800 text-sm">
         {currentIndex + 1} / {images.length}
       </div>
     </div>

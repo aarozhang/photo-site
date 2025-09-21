@@ -32,11 +32,11 @@ export function PhotoGallery({ images, albumTitle }: PhotoGalleryProps) {
 
   return (
     <>
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-6 p-6">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-12 p-12">
         {images.map((image, index) => (
           <div
             key={index}
-            className="group cursor-pointer overflow-hidden bg-gray-200 mb-6 break-inside-avoid"
+            className="cursor-zoom-in overflow-hidden bg-gray-200 mb-12 break-inside-avoid"
             onClick={() => openLightbox(index)}
           >
             <Image
@@ -44,7 +44,7 @@ export function PhotoGallery({ images, albumTitle }: PhotoGalleryProps) {
               alt={`${albumTitle} - Photo ${index + 1}`}
               width={800}
               height={600}
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-auto object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
           </div>
